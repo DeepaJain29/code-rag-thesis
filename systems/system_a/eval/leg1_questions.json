@@ -1,0 +1,412 @@
+{
+  "_note": "45 questions = 15 per repo. Reconstructed set - the paper's exact wording is unpublished. Shared verbatim by Systems A, B and C.",
+  "questions": [
+    {
+      "id": "shopizer-01",
+      "repo": "shopizer",
+      "category": "repository_semantics",
+      "question": "What is the overall module layout of this repository (top-level Maven modules), and what is each module responsible for?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-02",
+      "repo": "shopizer",
+      "category": "repository_semantics",
+      "question": "How is the persistence layer structured? Describe the DAO/repository classes and the ORM mechanism used to map entities to the database.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-03",
+      "repo": "shopizer",
+      "category": "repository_semantics",
+      "question": "Which classes define the product catalog domain model, and how are products, categories and variants related to each other?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-04",
+      "repo": "shopizer",
+      "category": "repository_semantics",
+      "question": "How is the shopping cart represented in the domain model, and which service class owns cart lifecycle operations?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-05",
+      "repo": "shopizer",
+      "category": "repository_semantics",
+      "question": "How does the codebase handle multi-store and multi-language/currency configuration? Name the entities and services involved.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-06",
+      "repo": "shopizer",
+      "category": "multi_hop_trace",
+      "question": "Trace an order checkout from the REST controller that receives the request through to the point where the order is persisted. Name every class in the path.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-07",
+      "repo": "shopizer",
+      "category": "multi_hop_trace",
+      "question": "Trace how a payment is processed: from the payment request entry point, through the payment module abstraction, to a specific payment integration implementation.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-08",
+      "repo": "shopizer",
+      "category": "multi_hop_trace",
+      "question": "Starting from the customer registration endpoint, trace which services and repositories are invoked before a customer row is written.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-09",
+      "repo": "shopizer",
+      "category": "multi_hop_trace",
+      "question": "Trace how a product search query travels from the search controller to the underlying search backend and back into a response object.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-10",
+      "repo": "shopizer",
+      "category": "multi_hop_trace",
+      "question": "Trace what happens when inventory is decremented after a successful order: which components observe or trigger that change?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-11",
+      "repo": "shopizer",
+      "category": "system_reasoning",
+      "question": "How are authentication and authorization implemented across the admin and storefront APIs, and where is the security configuration defined?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-12",
+      "repo": "shopizer",
+      "category": "system_reasoning",
+      "question": "If a new payment provider had to be added, which interfaces and configuration points would need to be implemented or registered?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-13",
+      "repo": "shopizer",
+      "category": "system_reasoning",
+      "question": "How are transactions managed in the service layer, and what would break if a service method were called outside a transactional context?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-14",
+      "repo": "shopizer",
+      "category": "system_reasoning",
+      "question": "How does the application separate REST API concerns from core business logic, and where is that boundary enforced?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "shopizer-15",
+      "repo": "shopizer",
+      "category": "system_reasoning",
+      "question": "Where is application configuration loaded from, and how would deployment-specific settings (database, mail, payment credentials) be supplied?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-01",
+      "repo": "thingsboard",
+      "category": "repository_semantics",
+      "question": "What are the top-level modules of this repository, and what is the responsibility of each (transport, rule engine, dao, application, UI)?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-02",
+      "repo": "thingsboard",
+      "category": "repository_semantics",
+      "question": "How is the rule engine organised? Describe the node abstraction and how rule chains are represented.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-03",
+      "repo": "thingsboard",
+      "category": "repository_semantics",
+      "question": "How is the actor system used in this codebase, and which entities are modelled as actors?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-04",
+      "repo": "thingsboard",
+      "category": "repository_semantics",
+      "question": "How is the DAO layer abstracted across different database backends, and which backends are supported?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-05",
+      "repo": "thingsboard",
+      "category": "repository_semantics",
+      "question": "What is the message abstraction passed between rule nodes, and what metadata does it carry?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-06",
+      "repo": "thingsboard",
+      "category": "multi_hop_trace",
+      "question": "Trace an MQTT device telemetry message from the transport layer through to persistence. Name every component it passes through.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-07",
+      "repo": "thingsboard",
+      "category": "multi_hop_trace",
+      "question": "Trace how a device attribute update initiated from the REST API reaches the device actor and then the transport session.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-08",
+      "repo": "thingsboard",
+      "category": "multi_hop_trace",
+      "question": "Trace the path of a rule chain execution: from message ingestion, through node evaluation, to a terminal action such as saving telemetry or raising an alarm.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-09",
+      "repo": "thingsboard",
+      "category": "multi_hop_trace",
+      "question": "Trace how an alarm is created, propagated and surfaced to a subscribed websocket client.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-10",
+      "repo": "thingsboard",
+      "category": "multi_hop_trace",
+      "question": "Starting from device provisioning via the REST API, trace which services and DAO classes are involved before credentials are stored.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-11",
+      "repo": "thingsboard",
+      "category": "system_reasoning",
+      "question": "How does the system achieve horizontal scalability, and which components coordinate work across cluster nodes?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-12",
+      "repo": "thingsboard",
+      "category": "system_reasoning",
+      "question": "How would a new rule node type be implemented and registered so it becomes available in rule chains?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-13",
+      "repo": "thingsboard",
+      "category": "system_reasoning",
+      "question": "How is tenant isolation enforced across entities, queries and API access?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-14",
+      "repo": "thingsboard",
+      "category": "system_reasoning",
+      "question": "How would support for an additional transport protocol be added, and which abstractions would have to be implemented?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "thingsboard-15",
+      "repo": "thingsboard",
+      "category": "system_reasoning",
+      "question": "How are timeseries data and attribute data handled differently, and what drives that design split?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-01",
+      "repo": "openmrs-core",
+      "category": "repository_semantics",
+      "question": "How is the service layer organised in this codebase, and what is the relationship between service interfaces, their implementations and DAO classes?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-02",
+      "repo": "openmrs-core",
+      "category": "repository_semantics",
+      "question": "What is the role of the Context class, and how do callers obtain service instances through it?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-03",
+      "repo": "openmrs-core",
+      "category": "repository_semantics",
+      "question": "How is the domain model for patients, persons and encounters structured, and how do these entities relate?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-04",
+      "repo": "openmrs-core",
+      "category": "repository_semantics",
+      "question": "How does the module system work: how are modules discovered, loaded and allowed to extend core behaviour?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-05",
+      "repo": "openmrs-core",
+      "category": "repository_semantics",
+      "question": "How is the concept dictionary modelled, and which entities represent concepts, their names and their answers?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-06",
+      "repo": "openmrs-core",
+      "category": "multi_hop_trace",
+      "question": "Trace how saving a patient flows from the service interface call to the database write, naming each class and interception layer involved.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-07",
+      "repo": "openmrs-core",
+      "category": "multi_hop_trace",
+      "question": "Trace how a privilege check is applied to a service method call: where is the annotation or advice declared, and where is it evaluated?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-08",
+      "repo": "openmrs-core",
+      "category": "multi_hop_trace",
+      "question": "Trace what happens when an encounter is created, including any validation and any handlers invoked before persistence.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-09",
+      "repo": "openmrs-core",
+      "category": "multi_hop_trace",
+      "question": "Trace how a module can replace or extend a core service, from module load to the point where callers receive the module's implementation.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-10",
+      "repo": "openmrs-core",
+      "category": "multi_hop_trace",
+      "question": "Starting from an observation (obs) save, trace validation, interception and persistence through to the Hibernate mapping.",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-11",
+      "repo": "openmrs-core",
+      "category": "system_reasoning",
+      "question": "How is validation implemented across the domain model, and how are validators registered and invoked?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-12",
+      "repo": "openmrs-core",
+      "category": "system_reasoning",
+      "question": "How does the codebase manage database schema changes across releases, and where are those change definitions kept?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-13",
+      "repo": "openmrs-core",
+      "category": "system_reasoning",
+      "question": "If a new core service had to be added, which interfaces, implementations, configuration entries and transaction settings would be required?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-14",
+      "repo": "openmrs-core",
+      "category": "system_reasoning",
+      "question": "How is API backwards compatibility for modules maintained, and what mechanisms exist for deprecating behaviour?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    },
+    {
+      "id": "openmrs-15",
+      "repo": "openmrs-core",
+      "category": "system_reasoning",
+      "question": "How are user sessions, authentication and the current-user context propagated to the service layer?",
+      "reference_answer": "",
+      "keywords": [],
+      "gold_files": []
+    }
+  ],
+  "provenance": "Reconstructed comparable set. arXiv:2601.08773 does not publish its exact question wording, so these 45 questions target the same three categories (repository semantics, multi-hop architectural tracing, system-level reasoning) without claiming question-level parity with the paper. Report this under 'known deviations'.",
+  "todo": "Fill reference_answer, keywords and gold_files for every entry by reading the source at the pinned commit. keywords drive shared.metrics.qa_rubric_score, so automatic scoring is not meaningful until they are populated; the same 45 questions are reused verbatim by Systems B and C."
+}

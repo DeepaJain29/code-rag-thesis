@@ -1,0 +1,28 @@
+# ---------------------------------------------------------------------------
+# SYSTEM A - Vanilla chunk/embed/retrieve RAG.
+# Values PINNED to arXiv:2601.08773's vector-only baseline.
+# Do not tune them (spec section 7: explicit non-goals).
+# ---------------------------------------------------------------------------
+system: system_a
+
+chunking:
+  splitter: RecursiveCharacterTextSplitter
+  chunk_size: 1000          # CHARACTERS, not tokens
+  chunk_overlap: 100        # CHARACTERS
+
+retrieval:
+  top_k: 10
+  metric: cosine            # inner product over L2-normalised vectors
+  rerank: none              # non-goal: no re-ranking in System A
+
+index:
+  backend: faiss
+  faiss_index_type: flat    # exact search; keeps the baseline honest
+  # one index per repo, never mixed across legs (spec section 4.4)
+
+generation:
+  leg1_n_samples: 1
+  leg2_n_samples: 5         # enough for pass@1 / pass@3 / pass@5
+
+prompt:
+  max_context_chars: 24000  # clamp so 10 chunks always fit the context window

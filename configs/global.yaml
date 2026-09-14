@@ -1,0 +1,93 @@
+# ---------------------------------------------------------------------------
+# GLOBAL config - shared by System A, B and C.
+# Everything here is downloaded ONCE into <project>/data and reused forever.
+# ---------------------------------------------------------------------------
+
+models:
+  # Embedding model (Systems A and C). Swap size per compute budget.
+  embedding:
+    repo_id: Qwen/Qwen3-Embedding-0.6B      # or Qwen3-Embedding-4B / -8B
+    revision: main                          # locked to a commit sha on first download
+    max_seq_length: 1024
+    batch_size: 32
+    normalize: true                         # cosine == inner product on normalised vectors
+    query_prompt: "Instruct: Given a code question, retrieve the most relevant code.\nQuery: "
+
+  # Final-generation model (identical across A/B/C - this is the key control).
+  generation:
+    repo_id: Qwen/Qwen2.5-Coder-7B-Instruct # or -14B-Instruct / -32B-Instruct
+    revision: main
+    dtype: bfloat16
+    load_in_4bit: false                     # set true for <16GB VRAM
+    max_new_tokens: 1024
+    temperature: 0.2                        # >0 required for pass@3 / pass@5 sampling
+    top_p: 0.95
+
+# ---------------------------------------------------------------------------
+# Leg 1 - QA replication repos (arXiv:2601.08773). PIN THE COMMITS.
+# commit: null  ->  resolve HEAD of `ref` on first download and write the sha
+# into configs/pins.lock.json. After that the sha in the lock file is authoritative.
+# ---------------------------------------------------------------------------
+repos:
+  leg1:
+    - name: shopizer
+      url: https://github.com/shopizer-ecommerce/shopizer.git
+      ref: master
+      commit: null
+      language: java
+      include_ext: [".java"]
+      paper_files: 1210
+      paper_chunks: 5403
+    - name: thingsboard
+      url: https://github.com/thingsboard/thingsboard.git
+      ref: master
+      commit: null
+      language: java
+      include_ext: [".java"]
+      paper_files: 4521
+      paper_chunks: 32428
+    - name: openmrs-core
+      url: https://github.com/openmrs/openmrs-core.git
+      ref: master
+      commit: null
+      language: java
+      include_ext: [".java"]
+      paper_files: 1258
+      paper_chunks: 11495
+
+  leg2:
+    - name: frappe
+      url: https://github.com/frappe/frappe.git
+      ref: version-15
+      commit: null
+      language: python
+      include_ext: [".py"]
+    - name: erpnext
+      url: https://github.com/frappe/erpnext.git
+      ref: version-15
+      commit: null
+      language: python
+      include_ext: [".py"]
+
+# Applied to every repo during ingestion.
+ingestion:
+  exclude_dirs: [".git", "node_modules", "target", "build", "dist", "__pycache__",
+                 ".venv", "venv", "test-output", ".mvn", ".github"]
+  max_file_bytes: 1000000       # skip anything over ~1MB (generated/minified files)
+
+datasets:
+  codereval:
+    kind: git
+    url: https://github.com/CoderEval/CoderEval.git
+    ref: main
+    commit: null
+  repoexec:
+    kind: hf
+    repo_id: Fsoft-AIC/RepoExec
+    config: null
+  crosscodeeval:
+    kind: git                   # only needed for the query-construction method
+    url: https://github.com/amazon-science/cceval.git
+    ref: main
+    commit: null
+    optional: true

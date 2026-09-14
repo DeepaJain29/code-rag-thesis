@@ -1,0 +1,13 @@
+# Global assets - large, reproducible from configs + pins.lock.json, never committed
+data/*
+!data/.gitkeep
+results/*
+!results/.gitkeep
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
+.DS_Store
